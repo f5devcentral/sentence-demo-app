@@ -49,6 +49,7 @@ helm install nginx-ingress nginx-stable/nginx-ingress --namespace ingress --set 
 ## Deploy all the pods manifests (in directoy /k8s-manifests)
 
 `WORDS` pods are deployed in `api` namespace 
+
 `FRONTEND` pod is deployed in `webapp-nginx` namespace
 
 
@@ -62,7 +63,7 @@ kubectl apply -f sentence-nginx-webapp.yaml -n webapp-nginx
 
 ## Deploy the Ingress Virtual Server resource
 
-Now, we must route the traffic either to the Nginx WebApp Frontend pod, if path is /, or route to `WORDS` pods is path start with `/api`
+Now, we must route the traffic either to the `Nginx WebApp Frontend` pod, if path is /, or route to `WORDS` pods is path starts with `/api`
 To do so, we will Ingress Virtual Server Route resource (better than an Ingress resource)
 
 ```
