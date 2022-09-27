@@ -1,0 +1,49 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServerRoute
+metadata:
+  name: api
+  namespace: api
+spec:
+  host: api.sentence.com
+  upstreams:
+  - name: sentence-adjectives
+    service: sentence-adjectives
+    port: 80
+  - name: sentence-animals
+    service: sentence-animals
+    port: 80
+  - name: sentence-colors
+    service: sentence-colors
+    port: 80
+  - name: sentence-locations
+    service: sentence-locations
+    port: 80
+  - name: sentence-backgrounds
+    service: sentence-backgrounds
+    port: 80
+  subroutes:
+  - path: /api/adjectives
+    action:
+      proxy:
+        upstream: sentence-adjectives
+        rewritePath: /adjectives
+  - path: /api/animals
+    action:
+       proxy:
+         upstream: sentence-animals
+         rewritePath: /animals
+  - path: /api/colors
+    action:
+      proxy:
+        upstream: sentence-colors
+        rewritePath: /colors
+  - path: /api/locations
+    action:
+      proxy:
+        upstream: sentence-locations
+        rewritePath: /locations
+  - path: /api/backgrounds
+    action:
+      proxy:
+        upstream: sentence-backgrounds
+        rewritePath: /backgrounds
