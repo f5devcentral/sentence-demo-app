@@ -1,0 +1,12 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: vs-sentence
+  namespace: main-vs-sentence
+spec:
+  host: api.sentence.com
+  routes:
+  - path: /
+    route: webapp-nginx/webapp-nginx
+  - path: /api
+    route: api/api
