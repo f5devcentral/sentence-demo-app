@@ -1,53 +1,65 @@
-# Solutions Engineering Template Repository
+# Description
+This is a very simple kubernetes demo application intended to show most of the benefits of using F5 Technology for your application delivery and security.
+It is composed of multiple technology frameworks.
 
-A template repository that contains all required files (LICENSE, SUPPORT, CONTRIBUTING, etc) as outlined in the org standards.  
+This app will generate a sentence :)
 
-The sections below are recommended in your project's README.md file.
+![alt text](docs/images/sentence-webapp.gif)
 
-## Overview
 
-Provide a short overview of the project.
+# Lab Documentation
+## Lab 1: Deploy the application in your k8s environment
 
-## Getting Started
+In this section, we will deploy the application as below, where the generator will `GET` each micro-service to get a `WORD`. 
 
-Provide a quick example of how to use your code.  This should provide the user with a launch point to quickly see what the project can offer them.
+> The Ingress Controller will not be deployed in this lab.
+s
+  ![alt text](docs/images/task1-topology.jpg)
 
-## Installation
+Then, the generator will provide with such output:
 
-Outline the requirements and steps to install this project.
+``` json
+{
+    "adjectives": "proud",
+    "animals": "lion",
+    "colors": "blue",
+    "locations": "park"
+}
+```
 
-## Usage
+Then, the frontend web application will `display` all the `words` in a `sentence`. If one micro-service is not deployed, the word is not displayed.
 
-Outline how the user can use your project and the various features the project offers.
+In term of micro-services, this is how there are used by the Webapp frontend.
 
-## Development
+  ![alt text](docs/images/webapp-containers.png)
 
-Outline any requirements to setup a development environment if someone would like to contribute.  You may also link to another file for this information.
 
-## Support
+> You can find the lab guide to deploy the app and the steps here: [Task1: Deploy the application](docs/task1/README.md)
 
-For support, please open a GitHub issue.  Note, the code in this repository is community supported and is not supported by F5 Networks.  For a complete list of supported projects please reference [SUPPORT.md](SUPPORT.md).
 
-## Community Code of Conduct
+## Lab 2: API Management
+  **Goal**
 
-Please refer to the [F5 DevCentral Community Code of Conduct](code_of_conduct.md).
+  Deploy an API Gw in Kubernetes managed by Nginx Controller. And scale this Gateway in K8S with auto-adoption by the controller.
 
-## License
+  Deploy and Ingress Controller to route the traffic to:
+    
+  - The Web Application frontend if the path EQUALS /
+  - The API Gateway is the path starts with /api/
 
-[Apache License 2.0](LICENSE)
+  **The Workflow:**
 
-## Copyright
+  In this lab, the `workflow` is a little bit different. All the API routing is done by the API Gateway. It means, the `generator` will reach the API Gw to GET the `WORD` micro-services.
 
-Copyright 2014-2020 F5 Networks Inc.
+  This will allow us to controle the API access and routing, authentication and authorization.
 
-### F5 Networks Contributor License Agreement
 
-Before you start contributing to any project sponsored by F5 Networks, Inc. (F5) on GitHub, you will need to sign a Contributor License Agreement (CLA).
+  **Features:**
+  - NGINX Controller API Management
+  - NGINX Ingress Controller
+  
+  ![](docs/images/topology2.png)
 
-If you are signing as an individual, we recommend that you talk to your employer (if applicable) before signing the CLA since some employment agreements may have restrictions on your contributions to other projects.
-Otherwise by submitting a CLA you represent that you are legally entitled to grant the licenses recited therein.
 
-If your employer has rights to intellectual property that you create, such as your contributions, you represent that you have received permission to make contributions on behalf of that employer, that your employer has waived such rights for your contributions, or that your employer has executed a separate CLA with F5.
-
-If you are signing on behalf of a company, you represent that you are legally entitled to grant the license recited therein.
-You represent further that each employee of the entity that submits contributions is authorized to submit such contributions on behalf of the entity pursuant to the CLA.
+# Courtesy of:
+Thanks to https://www.npmjs.com/package/json-server for the zero coding JSON Server.
