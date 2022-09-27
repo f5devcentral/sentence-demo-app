@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sentence-frontend-nginx
+spec:
+  selector:
+    matchLabels:
+      app: sentence-frontend-nginx
+  template:
+    metadata:
+      labels:
+        app: sentence-frontend-nginx
+    spec:
+      containers:
+        - name: frontend-nginx
+          image: registry.gitlab.com/sentence-app/frontend:dev
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: PREFIX
+              value: "sentence"
+            - name: NAMESPACE
+              value: "api"
+          resources:
+            requests:
+              memory: "32Mi"
+              cpu: "10m"
+            limits:
+              memory: "64Mi"
+              cpu: "100m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sentence-frontend-nginx
+spec:
+  type: ClusterIP
+  selector:
+    app: sentence-frontend-nginx
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
