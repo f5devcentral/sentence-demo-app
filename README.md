@@ -27,7 +27,7 @@ Then, the frontend web application will `display` all the `words` in a `sentence
 
 In term of micro-services, this is how there are used by the Webapp frontend.
 
-  ![alt text](docs/images/webapp-containers.png)
+  ![alt text](images/webapp-containers.png)
 
 
 
