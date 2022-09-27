@@ -11,7 +11,7 @@ This app will generate a sentence :)
 
 Every `WORD` pod delivers a list of `WORDS`. Then, the `GENERATOR` select one `WORD` per POD, and generates a `SENTENCE` in a JSON format
 
-  ![alt text](images/topology.jpg)
+  ![alt text](images/topology.png)
 
 
 ``` json
