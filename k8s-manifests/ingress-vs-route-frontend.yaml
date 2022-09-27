@@ -1,0 +1,15 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServerRoute
+metadata:
+  name: webapp-nginx
+  namespace: webapp-nginx
+spec:
+  host: api.sentence.com
+  upstreams:
+  - name: sentence-frontend-nginx
+    service: sentence-frontend-nginx
+    port: 80
+  subroutes:
+  - path: /
+    action:
+      pass: sentence-frontend-nginx
