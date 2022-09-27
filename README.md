@@ -4,6 +4,8 @@ It is composed of multiple technology frameworks.
 
 This app will generate a sentence :)
 
+https://github.com/f5devcentral/sentence-demo-app/blob/54ac17f6b69eb82c967474a5ace5fbb2a73f0b9b/images/app-movie.mov
+
 ![alt text](docs/images/sentence-webapp.gif)
 
 
