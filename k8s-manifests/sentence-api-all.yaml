@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: generator
-          image: registry.gitlab.com/sentence-app/generator:dev
+          image: matt262810/sentence-generator:v1.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -58,7 +58,7 @@ spec:
     spec:
       containers:
         - name: colors
-          image: registry.gitlab.com/sentence-app/colors:latest
+          image: matt262810/sentence-colors:v1.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -103,7 +103,7 @@ spec:
     spec:
       containers:
         - name: adjectives
-          image: registry.gitlab.com/sentence-app/adjectives:latest
+          image: matt262810/sentence-adjectives:v1.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -148,7 +148,7 @@ spec:
     spec:
       containers:
         - name: animals
-          image: registry.gitlab.com/sentence-app/animals:latest
+          image: matt262810/sentence-animals:v1.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -193,7 +193,7 @@ spec:
     spec:
       containers:
         - name: animals
-          image: registry.gitlab.com/sentence-app/locations:latest
+          image: matt262810/sentence-locations:v1.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -238,7 +238,7 @@ spec:
     spec:
       containers:
         - name: backgrounds
-          image: registry.gitlab.com/sentence-app/backgrounds:latest
+          image: matt262810/sentence-backgrounds:v1.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
