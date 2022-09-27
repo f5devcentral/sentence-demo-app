@@ -1,3 +1,8 @@
+api Version: v1
+kind: Namespace
+metadata:
+  name: main-vs-sentence
+---
 apiVersion: k8s.nginx.org/v1
 kind: VirtualServer
 metadata:
