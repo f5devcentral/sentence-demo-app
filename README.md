@@ -64,6 +64,7 @@ kubectl apply -f sentence-nginx-webapp.yaml -n webapp-nginx
 ## Deploy the Ingress Virtual Server resource
 
 Now, we must route the traffic either to the `Nginx WebApp Frontend` pod, if path is /, or route to `WORDS` pods is path starts with `/api`
+
 To do so, we will Ingress Virtual Server Route resource (better than an Ingress resource)
 
 ```
@@ -71,6 +72,29 @@ kubectl apply -f ingress-vs-master.yaml
 kubectl apply -f ingress-vs-route-api.yaml -n api
 kubectl apply -f ingress-vs-route-frontend.yaml -n api
 ```
+
+## Test the app
+
+First, find the NodePort used by the ingress.
+
+```
+kubectl get service -n ingress
+
+NAME                          TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)                      AGE
+nginx-ingress-nginx-ingress   NodePort   10.43.129.50   <none>        80:32061/TCP,443:32553/TCP   77m
+```
+
+Collect the port used for port `80`. Here, it is the port `32061`
+
+Test your app :)
+
+```
+curl -H "Host: api.sentence.com" http://127.0.0.1:32061/api/colors
+curl -H "Host: api.sentence.com" http://127.0.0.1:32061/api/locations
+curl -H "Host: api.sentence.com" http://127.0.0.1:32061/api/sentence
+```
+
+You can also test your app in a browser http://api.sentence.com:32061/
 
 # Courtesy of:
 Thanks to https://www.npmjs.com/package/json-server for the zero coding JSON Server.
