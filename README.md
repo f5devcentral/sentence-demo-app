@@ -55,7 +55,7 @@ helm install nginx-ingress nginx-stable/nginx-ingress --namespace ingress --set 
 
 ```
 kubectl create ns api
-kubectl create ns webapp
+kubectl create ns webapp-nginx
 
 kubectl apply -f sentence-api-all.yaml -n api
 kubectl apply -f sentence-nginx-webapp.yaml -n webapp-nginx
