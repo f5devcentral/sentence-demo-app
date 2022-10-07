@@ -70,7 +70,7 @@ To do so, we will Ingress Virtual Server Route resource (better than an Ingress 
 ```
 kubectl apply -f ingress-vs-master.yaml
 kubectl apply -f ingress-vs-route-api.yaml -n api
-kubectl apply -f ingress-vs-route-frontend.yaml -n api
+kubectl apply -f ingress-vs-route-frontend.yaml -n webapp-nginx
 ```
 
 ## Test the app
