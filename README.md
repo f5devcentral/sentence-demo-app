@@ -73,6 +73,12 @@ kubectl apply -f ingress-vs-route-api.yaml -n api
 kubectl apply -f ingress-vs-route-frontend.yaml -n webapp-nginx
 ```
 
+For Minikube, an extra step is required :
+
+```
+minikube service nginx-ingress-nginx-ingress --url -n ingress
+````
+
 ## Test the app
 
 First, find the NodePort used by the ingress.
