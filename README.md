@@ -76,7 +76,19 @@ kubectl apply -f ingress-vs-route-frontend.yaml -n webapp-nginx
 For Minikube, an extra step is required :
 
 ```
-minikube service nginx-ingress-nginx-ingress --url -n ingress
+$ kubectl get service -n ingress
+NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE
+nginx-ingress-nginx-ingress NodePort 10.100.80.212 80:31859/TCP,443:30898/TCP 14m
+
+$ curl -H "Host: api.sentence.com" http://127.0.0.1:31859/api/sentence
+curl: (7) Failed to connect to 127.0.0.1 port 31859 after 0 ms: Connection refused
+
+$ minikube service nginx-ingress-nginx-ingress --url -n ingress
+http://192.168.49.2:31859
+http://192.168.49.2:30898
+
+$ curl -H "Host: api.sentence.com" http://192.168.49.2:31859/api/sentence
+{"sentence": {"adjectives": "kind", "animals": "mouse", "colors": "green", "locatio...}
 ````
 
 ## Test the app
