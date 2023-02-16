@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: frontend-nginx
-          image: matt262810/sentence-nginx-webapp:v1.0
+          image: matt262810/sentence-nginx-webapp:v2.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -22,13 +22,6 @@ spec:
               value: "sentence"
             - name: NAMESPACE
               value: "api"
-          resources:
-            requests:
-              memory: "32Mi"
-              cpu: "10m"
-            limits:
-              memory: "64Mi"
-              cpu: "100m"
 ---
 apiVersion: v1
 kind: Service
