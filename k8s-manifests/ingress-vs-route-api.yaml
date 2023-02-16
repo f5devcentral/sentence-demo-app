@@ -4,7 +4,7 @@ metadata:
   name: api
   namespace: api
 spec:
-  host: api.sentence.com
+  host: f5appsuccess.emea.f5se.com
   upstreams:
   - name: sentence-adjectives
     service: sentence-adjectives
@@ -42,8 +42,8 @@ spec:
       proxy:
         upstream: sentence-locations
         rewritePath: /locations
-  - path: /api/backgrounds
+  - path: /api/backgrounds/
     action:
       proxy:
         upstream: sentence-backgrounds
-        rewritePath: /backgrounds
+        rewritePath: /
