@@ -4,7 +4,7 @@ metadata:
   name: api
   namespace: api
 spec:
-  host: f5appsuccess.emea.f5se.com
+  host: api.sentence.com
   upstreams:
   - name: sentence-adjectives
     service: sentence-adjectives
