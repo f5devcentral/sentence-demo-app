@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: generator
-          image: matt262810/sentence-generator:v1.0
+          image: matt262810/sentence-generator:v2.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -22,13 +22,6 @@ spec:
               value: "sentence"
             - name: NAMESPACE
               value: "api"
-          resources:
-            requests:
-              memory: "32Mi"
-              cpu: "10m"
-            limits:
-              memory: "64Mi"
-              cpu: "25m"
 ---
 apiVersion: v1
 kind: Service
@@ -58,7 +51,7 @@ spec:
     spec:
       containers:
         - name: colors
-          image: matt262810/sentence-colors:v1.0
+          image: matt262810/sentence-colors:v2.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -67,13 +60,6 @@ spec:
               value: "sentence"
             - name: NAMESPACE
               value: "api"
-          resources:
-            requests:
-              memory: "32Mi"
-              cpu: "10m"
-            limits:
-              memory: "64Mi"
-              cpu: "25m"
 ---
 apiVersion: v1
 kind: Service
@@ -103,7 +89,7 @@ spec:
     spec:
       containers:
         - name: adjectives
-          image: matt262810/sentence-adjectives:v1.0
+          image: matt262810/sentence-adjectives:v2.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -112,13 +98,6 @@ spec:
               value: "sentence"
             - name: NAMESPACE
               value: "api"
-          resources:
-            requests:
-              memory: "32Mi"
-              cpu: "10m"
-            limits:
-              memory: "64Mi"
-              cpu: "25m"
 ---
 apiVersion: v1
 kind: Service
@@ -148,7 +127,7 @@ spec:
     spec:
       containers:
         - name: animals
-          image: matt262810/sentence-animals:v1.0
+          image: matt262810/sentence-animals:v2.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -157,13 +136,6 @@ spec:
               value: "sentence"
             - name: NAMESPACE
               value: "api"
-          resources:
-            requests:
-              memory: "32Mi"
-              cpu: "10m"
-            limits:
-              memory: "64Mi"
-              cpu: "25m"
 ---
 apiVersion: v1
 kind: Service
@@ -192,8 +164,8 @@ spec:
         app: sentence-locations
     spec:
       containers:
-        - name: animals
-          image: matt262810/sentence-locations:v1.0
+        - name: locations
+          image: matt262810/sentence-locations:v2.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -202,13 +174,6 @@ spec:
               value: "sentence"
             - name: NAMESPACE
               value: "api"
-          resources:
-            requests:
-              memory: "32Mi"
-              cpu: "10m"
-            limits:
-              memory: "64Mi"
-              cpu: "25m"
 ---
 apiVersion: v1
 kind: Service
@@ -238,7 +203,7 @@ spec:
     spec:
       containers:
         - name: backgrounds
-          image: matt262810/sentence-backgrounds:v1.0
+          image: matt262810/sentence-backgrounds:v2.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -247,13 +212,6 @@ spec:
               value: "sentence"
             - name: NAMESPACE
               value: "api"
-          resources:
-            requests:
-              memory: "32Mi"
-              cpu: "10m"
-            limits:
-              memory: "64Mi"
-              cpu: "25m"
 ---
 apiVersion: v1
 kind: Service
