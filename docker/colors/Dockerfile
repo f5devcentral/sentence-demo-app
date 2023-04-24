@@ -14,9 +14,9 @@ RUN \
 # to be able to use "nano" with shell on "docker exec -it [CONTAINER ID] bash"
 ENV TERM xterm
 
-COPY adjectives.json /
+COPY colors.json /
 
 EXPOSE 8080
 
-WORKDIR /
-CMD ["json-server", "--host", "0.0.0.0", "--port", "8080" , "--watch", "adjectives.json"]
+#ENTRYPOINT ["json-server"]
+CMD ["json-server", "-H", "0.0.0.0", "--port", "8080" , "--watch", "colors.json"]

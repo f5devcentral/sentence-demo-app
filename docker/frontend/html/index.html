@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Random Name Generator</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="title" content="Random Name Generator">
+  <link href="./css/style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/556c5d2f1b.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./js/anime.min.js"></script>
+  <script type="text/javascript" src="./js/script.js"></script>
+</head>
+
+<body>
+  <div class="bg">
+    <img src="">
+  </div>
+
+  <div class="spinner" id="sentence">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="success-banner">
+    <span id="success-banner-message"></span>
+    <i id="success-banner-image"></i>
+  </div>
+
+  <div class="popup hide" id="prompt-form-container">
+    <form class="word-form" id="prompt-form">
+      <!-- <i class="close-button far fa-times-circle"></i> -->
+      <div>
+        <h2 id="prompt-message"></h2>
+        <span id="prompt-info" class="info"></span>
+      </div>
+      <input type="text" name="text" class="inputBox" id="prompt-input" />
+      <input type="submit" name="submit" value="Ok" class="button-3" />
+      <input type="button" name="cancel" value="Cancel" class="button-4" />
+    </form>
+  </div>
+
+  <div class="site-env">
+    <!--# if expr="$site_env_message != null"-->
+    <span><!--#echo var="site_env_message" --></span>
+    <!--# endif -->
+
+    <!--# if expr="$ves_io_sitename != null"-->
+    <span><!--#echo var="ves_io_sitename" --></span>
+    <!--# endif -->
+
+    <!--# if expr="$site_env = aws"-->
+    <i class="fab fa-aws"></i>
+    <!--# elif expr="$site_env = microsoft" -->
+    <i class="fab fa-microsoft"></i>
+    <!--# elif expr="$site_env = google" -->
+    <i class="fab fa-google"></i>
+    <!--# elif expr="$site_env = f5" -->
+    <img src="./images/f5.png" />
+    <!--# elif expr="$site_env = server" -->
+    <i class="fas fa-server"></i>
+    <!--# else -->
+    <!--# endif -->
+  </div>
+
+  <div class="grid hide">
+    <div class="grid-item" id="adjective">
+      <h1 class="sentence"></h1>
+      <i class="plus-icon fas fa-plus"></i>
+    </div>
+    <div class="grid-item" id="animal">
+      <h1 class="sentence"></h1>
+      <i class="plus-icon fas fa-plus"></i>
+    </div>
+    <div class="grid-item">
+      <h1 class="sentence">of</h1>
+    </div>
+    <div class="grid-item">
+      <h1 class="sentence">the</h1>
+    </div>
+    <div class="grid-item" id="color">
+      <h1 class="sentence"></h1>
+      <i class="plus-icon fas fa-plus"></i>
+    </div>
+    <div class="grid-item" id="location">
+      <h1 class="sentence"></h1>
+      <i class="plus-icon fas fa-plus"></i>
+    </div>
+  </div>
+</body>
+<footer>
+  <div class="logos">
+    <div class="img">
+      <a href="https://www.f5.com/cloud">
+        <img src="./images/f5.png" />
+      </a>
+    </div>
+    <div class="img">
+      <a href="https://www.nginx.com">
+        <img src="./images/nginx.png" />
+      </a>
+    </div>
+  </div>
+  <div class="spinner hide" id="post">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</footer>
+
+</html>

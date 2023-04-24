@@ -1,16 +1,16 @@
 { 
-	"adjectives": [
+	"locations": [
 	{
 		"id": 1,
-		"name": "kind"
+		"name": "valley"
 	},
         {
                 "id": 2,
-                "name": "proud"
+                "name": "park"
         },
         {
                 "id": 3,
-                "name": "calm"
+                "name": "mountain"
         }
 	]
 }

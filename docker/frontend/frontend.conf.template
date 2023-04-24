@@ -1,0 +1,40 @@
+server {
+    listen       8080;
+    listen  [::]:8080;
+
+    #access_log  /var/log/nginx/host.access.log  main;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+        ssi on;
+        
+        set $site_env ${SITE_ENV};
+        set $site_env_message ${SITE_ENV_MESSAGE};
+        set $ves_io_sitename ${VES_IO_SITENAME};
+    }
+    
+    location /api/sentence {
+        proxy_pass http://${PREFIX}-generator.${NAMESPACE};
+        proxy_ssl_server_name on;
+    }
+
+    #location /api/backgrounds {
+    #    proxy_pass http://${PREFIX}-backgrounds.${NAMESPACE}/;
+    #    proxy_ssl_server_name on;
+    #}
+
+    location /api/backgrounds/ {
+        proxy_pass http://${PREFIX}-backgrounds.${NAMESPACE}/;
+        proxy_ssl_server_name on;
+    }
+
+    #error_page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }   
+}

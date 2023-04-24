@@ -1,0 +1,476 @@
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: black;
+  font-family: apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
+    Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none !important;
+}
+
+.bg {
+  display: flex;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg img {
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  filter: blur(4px);
+}
+
+.inputBox {
+  width: 100%;
+  margin: 5px 0px 15px 0px;
+  border: #dedede 1px solid;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.site-env {
+  position: absolute;
+  right: 0;
+  font-size: 24px;
+  padding: 2px;
+  line-height: 40px !important;
+  font-weight: 400;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  margin: 15px;
+}
+
+/* .site-env i {
+  margin-left: 15px;
+} */
+
+.site-env img {
+  vertical-align: middle;
+  height: 40px;
+}
+
+.popup {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #676767;
+  z-index: 2;
+}
+
+.word-form {
+  width: 350px;
+  margin: 0px;
+  background-color: white;
+  border-radius: 0.8rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  box-shadow: 0px 2px 10px #191919;
+  padding: 20px 30px 20px 30px;
+}
+
+.word-form>div>h2 {
+  margin: 0 0 10px 0;
+}
+
+.plus-icon {
+  cursor: pointer;
+  font-size: 32px;
+  line-height: 32px !important;
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0px 10px 5px rgba(0, 0, 0, 0.1), 5px 15px 5px rgba(0, 0, 0, 0.1),
+    -5px 15px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: font-size 200ms;
+}
+
+.plus-icon.mouseover {
+  font-size: 40px;
+}
+
+.info {
+  color: #d30a0a;
+  font-weight: 500;
+}
+
+#send {
+  background-color: #09f;
+  border: 1px solid #1398f1;
+  font-family: Arial;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#word-popup h2 {
+  font-weight: normal;
+  text-align: center;
+  margin: 10px 0px 20px 0px;
+}
+
+.success-banner {
+  /* display: none; */
+  position: absolute;
+  top: 0;
+  width: 100%;
+  line-height: 80px;
+  text-align: center;
+  font-family: 'Lobster';
+  font-size: 32px;
+  color: white;
+  text-shadow: 0px 10px 5px rgba(0, 0, 0, 0.1), 5px 15px 5px rgba(0, 0, 0, 0.1),
+    -5px 15px 5px rgba(0, 0, 0, 0.1);
+}
+
+.success {
+  background-color: forestgreen;
+}
+
+.failure {
+  background-color: orangered;
+}
+
+.success i {
+  color: greenyellow;
+}
+
+.failure i {
+  color: orange;
+}
+
+.input-error {
+  border: #e66262 1px solid;
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+  grid-auto-flow: column;
+  gap: 10px;
+}
+
+.grid-item {
+  text-align: center;
+  z-index: 1;
+}
+
+.sentence {
+  position: relative;
+  margin-bottom: 15px;
+  font-family: 'Lobster', cursive;
+  font-size: 48px;
+  text-shadow: 0px 10px 5px rgba(0, 0, 0, 0.1), 5px 15px 5px rgba(0, 0, 0, 0.1),
+    -5px 15px 5px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.sentence .word {
+  display: inline-block;
+  overflow: visible;
+  opacity: 0;
+  padding-left: 10px;
+  text-transform: lowercase;
+}
+
+.grid-item>.sentence :first-child {
+  padding-left: 0;
+}
+
+.grid-item:first-child>.sentence :first-child {
+  text-transform: capitalize;
+}
+
+
+footer {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  padding-bottom: 15px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 200px;
+}
+
+footer .logos {
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+  border-collapse: collapse;
+  opacity: 0;
+}
+
+footer .logos .img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+footer .logos img {
+  max-width: 100%;
+  height: auto;
+  max-height: 50px;
+  display: inline-block;
+  margin: 15px;
+}
+
+.button-3 {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.button-3:hover {
+  background-color: #2c974b;
+}
+
+.button-3:focus {
+  box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
+  outline: none;
+}
+
+.button-3:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
+
+.button-3:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+}
+
+.button-4 {
+  appearance: none;
+  background-color: #fafbfc;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.button-4:hover {
+  background-color: #f3f4f6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.button-4:disabled {
+  background-color: #fafbfc;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959da5;
+  cursor: default;
+}
+
+.button-4:active {
+  background-color: #edeff2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.button-4:focus {
+  outline: 1px transparent;
+}
+
+.button-4:before {
+  display: none;
+}
+
+.button-4:-webkit-details-marker {
+  display: none;
+}
+
+/* Fadein-fadeout css animations */
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeout {
+  animation-name: fadeout;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadein {
+  animation-name: fadein;
+  animation-duration: 1500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+/* Spinner */
+
+.spinner#sentence {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner#post {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  display: none;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(24px, 0);
+  }
+}

@@ -1,22 +1,19 @@
-FROM node:16-alpine
+FROM nginxinc/nginx-unprivileged:1.23-alpine
 
-WORKDIR /
+USER root
 
-RUN \
-    echo "==> Install app..."                && \
-    npm install -g --production json-server  && \
-    \
-    \
-    echo "==> Remove unused temp..."         && \
-    rm -rf /root/.npm                  \
-           /usr/lib/node_modules/npm
+RUN rm -v /etc/nginx/nginx.conf
+RUN rm -v /etc/nginx/conf.d/default.conf
 
-# to be able to use "nano" with shell on "docker exec -it [CONTAINER ID] bash"
-ENV TERM xterm
+COPY nginx.conf /etc/nginx/
+COPY frontend.conf.template /etc/nginx/templates/
+COPY /html /usr/share/nginx/html
 
-COPY adjectives.json /
+# Enables and arbitrary user to write to nginx folder, Needed for vk8s deployments
+RUN chmod -R 777 /etc/nginx
 
-EXPOSE 8080
+ENV SITE_ENV null
+ENV SITE_ENV_MESSAGE null
 
-WORKDIR /
-CMD ["json-server", "--host", "0.0.0.0", "--port", "8080" , "--watch", "adjectives.json"]
+EXPOSE 8080  
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,22 +1,12 @@
-FROM node:16-alpine
+FROM python:3.10-alpine
+
+COPY requirements.txt /
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app.py /
+COPY config.py /
 
 WORKDIR /
 
-RUN \
-    echo "==> Install app..."                && \
-    npm install -g --production json-server  && \
-    \
-    \
-    echo "==> Remove unused temp..."         && \
-    rm -rf /root/.npm                  \
-           /usr/lib/node_modules/npm
-
-# to be able to use "nano" with shell on "docker exec -it [CONTAINER ID] bash"
-ENV TERM xterm
-
-COPY adjectives.json /
-
-EXPOSE 8080
-
-WORKDIR /
-CMD ["json-server", "--host", "0.0.0.0", "--port", "8080" , "--watch", "adjectives.json"]
+CMD ["gunicorn", "-w 4", "-b 0.0.0.0:8080", "app:generator"]
