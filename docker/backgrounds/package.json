@@ -1,0 +1,24 @@
+{
+    "name": "backgrounds",
+    "version": "1.0.0",
+    "description": "Serves random background images",
+    "main": "index.js",
+    "dependencies": {
+      "express": "~4.18.2"
+    },
+    "scripts": {
+      "test": "echo \\\"Error: no test specified\\\" && exit 1",
+      "start": "node index.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://gitlab.com/sentence-app/backgrounds.git"
+    },
+    "author": "agyllen",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://gitlab.com/sentence-app/backgrounds/issues"
+    },
+    "homepage": "https://gitlab.com/sentence-app/backgrounds#readme"
+  }
+  
