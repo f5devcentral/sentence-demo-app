@@ -1,0 +1,45 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: kill-pod
+spec:
+  schedule: "0 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: crondeletepod
+          containers:
+          - name: kill-adjectives
+            image: bitnami/kubectl:latest
+            command:
+            - kubectl
+            args:
+            - delete
+            - pod
+            - -l app=sentence-adjectives
+          - name: kill-animals
+            image: bitnami/kubectl:latest
+            command:
+            - kubectl
+            args:
+            - delete
+            - pod
+            - -l app=sentence-animals
+          - name: kill-colors
+            image: bitnami/kubectl:latest
+            command:
+            - kubectl
+            args:
+            - delete
+            - pod
+            - -l app=sentence-colors
+          - name: kill-locations
+            image: bitnami/kubectl:latest
+            command:
+            - kubectl
+            args:
+            - delete
+            - pod
+            - -l app=sentence-locations
+          restartPolicy: OnFailure
