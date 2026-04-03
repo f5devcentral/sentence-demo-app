@@ -11,6 +11,406 @@
         {
                 "id": 3,
                 "name": "mountain"
+        },
+        {
+                "id": 4,
+                "name": "river"
+        },
+        {
+                "id": 5,
+                "name": "forest"
+        },
+        {
+                "id": 6,
+                "name": "delta"
+        },
+        {
+                "id": 7,
+                "name": "everest"
+        },
+        {
+                "id": 8,
+                "name": "sahara"
+        },
+        {
+                "id": 9,
+                "name": "alps"
+        },
+        {
+                "id": 10,
+                "name": "andes"
+        },
+        {
+                "id": 11,
+                "name": "brooklyn"
+        },
+        {
+                "id": 12,
+                "name": "paris"
+        },
+        {
+                "id": 13,
+                "name": "tokyo"
+        },
+        {
+                "id": 14,
+                "name": "rome"
+        },
+        {
+                "id": 15,
+                "name": "sydney"
+        },
+        {
+                "id": 16,
+                "name": "cape town"
+        },
+        {
+                "id": 17,
+                "name": "himalaya"
+        },
+        {
+                "id": 18,
+                "name": "nihon"
+        },
+        {
+                "id": 19,
+                "name": "pompeii"
+        },
+        {
+                "id": 20,
+                "name": "madrid"
+        },
+        {
+                "id": 21,
+                "name": "lisbon"
+        },
+        {
+                "id": 22,
+                "name": "brisbane"
+        },
+        {
+                "id": 23,
+                "name": "milan"
+        },
+        {
+                "id": 24,
+                "name": "vancouver"
+        },
+        {
+                "id": 25,
+                "name": "manila"
+        },
+        {
+                "id": 26,
+                "name": "athens"
+        },
+        {
+                "id": 27,
+                "name": "berlin"
+        },
+        {
+                "id": 28,
+                "name": "dubai"
+        },
+        {
+                "id": 29,
+                "name": "oslo"
+        },
+        {
+                "id": 30,
+                "name": "utah"
+        },
+        {
+                "id": 31,
+                "name": "denver"
+        },
+        {
+                "id": 32,
+                "name": "sierra"
+        },
+        {
+                "id": 33,
+                "name": "niagara"
+        },
+        {
+                "id": 34,
+                "name": "zion"
+        },
+        {
+                "id": 35,
+                "name": "yakutsk"
+        },
+        {
+                "id": 36,
+                "name": "albuquerque"
+        },
+        {
+                "id": 37,
+                "name": "boston"
+        },
+        {
+                "id": 38,
+                "name": "el yli"
+        },
+        {
+                "id": 39,
+                "name": "fujiyama"
+        },
+        {
+                "id": 40,
+                "name": "glacier"
+        },
+        {
+                "id": 41,
+                "name": "harbor"
+        },
+        {
+                "id": 42,
+                "name": "iceland"
+        },
+        {
+                "id": 43,
+                "name": "jungle"
+        },
+        {
+                "id": 44,
+                "name": "kabul"
+        },
+        {
+                "id": 45,
+                "name": "lagoon"
+        },
+        {
+                "id": 46,
+                "name": "manhattan"
+        },
+        {
+                "id": 47,
+                "name": "nairobi"
+        },
+        {
+                "id": 48,
+                "name": "oceania"
+        },
+        {
+                "id": 49,
+                "name": "prairie"
+        },
+        {
+                "id": 50,
+                "name": "quebec"
+        },
+        {
+                "id": 51,
+                "name": "rio"
+        },
+        {
+                "id": 52,
+                "name": "savannah"
+        },
+        {
+                "id": 53,
+                "name": "taipei"
+        },
+        {
+                "id": 54,
+                "name": "utopia"
+        },
+        {
+                "id": 55,
+                "name": "volcano"
+        },
+        {
+                "id": 56,
+                "name": "wellington"
+        },
+        {
+                "id": 57,
+                "name": "xian"
+        },
+        {
+                "id": 58,
+                "name": "yakima"
+        },
+        {
+                "id": 59,
+                "name": "zanzibar"
+        },
+        {
+                "id": 60,
+                "name": "aspen"
+        },
+        {
+                "id": 61,
+                "name": "bali"
+        },
+        {
+                "id": 62,
+                "name": "crete"
+        },
+        {
+                "id": 63,
+                "name": "dublin"
+        },
+        {
+                "id": 64,
+                "name": "europe"
+        },
+        {
+                "id": 65,
+                "name": "fjord"
+        },
+        {
+                "id": 66,
+                "name": "giza"
+        },
+        {
+                "id": 67,
+                "name": "hudson"
+        },
+        {
+                "id": 68,
+                "name": "iberia"
+        },
+        {
+                "id": 69,
+                "name": "jerusalem"
+        },
+        {
+                "id": 70,
+                "name": "kansas"
+        },
+        {
+                "id": 71,
+                "name": "london"
+        },
+        {
+                "id": 72,
+                "name": "mesa"
+        },
+        {
+                "id": 73,
+                "name": "nauru"
+        },
+        {
+                "id": 74,
+                "name": "palermo"
+        },
+        {
+                "id": 75,
+                "name": "qiandao"
+        },
+        {
+                "id": 76,
+                "name": "robinson"
+        },
+        {
+                "id": 77,
+                "name": "seattle"
+        },
+        {
+                "id": 78,
+                "name": "tundra"
+        },
+        {
+                "id": 79,
+                "name": "uluru"
+        },
+        {
+                "id": 80,
+                "name": "venice"
+        },
+        {
+                "id": 81,
+                "name": "wales"
+        },
+        {
+                "id": 82,
+                "name": "xterra"
+        },
+        {
+                "id": 83,
+                "name": "yosemite"
+        },
+        {
+                "id": 84,
+                "name": "zermatt"
+        },
+        {
+                "id": 85,
+                "name": "amarillo"
+        },
+        {
+                "id": 86,
+                "name": "bordeaux"
+        },
+        {
+                "id": 87,
+                "name": "cairo"
+        },
+        {
+                "id": 88,
+                "name": "dakar"
+        },
+        {
+                "id": 89,
+                "name": "edinburgh"
+        },
+        {
+                "id": 90,
+                "name": "fresno"
+        },
+        {
+                "id": 91,
+                "name": "granada"
+        },
+        {
+                "id": 92,
+                "name": "havana"
+        },
+        {
+                "id": 93,
+                "name": "island"
+        },
+        {
+                "id": 94,
+                "name": "jakarta"
+        },
+        {
+                "id": 95,
+                "name": "kathmandu"
+        },
+        {
+                "id": 96,
+                "name": "lima"
+        },
+        {
+                "id": 97,
+                "name": "moscow"
+        },
+        {
+                "id": 98,
+                "name": "naples"
+        },
+        {
+                "id": 99,
+                "name": "osaka"
+        },
+        {
+                "id": 100,
+                "name": "phuket"
+        },
+        {
+                "id": 101,
+                "name": "quartz"
+        },
+        {
+                "id": 102,
+                "name": "romeo"
+        },
+        {
+                "id": 103,
+                "name": "santorini"
         }
 	]
 }
