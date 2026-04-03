@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:trixie-slim
 
 RUN \
     echo "==> Install app..."                && \
